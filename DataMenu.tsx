@@ -7,6 +7,8 @@ interface ItemInterace {
   key?: string;
   title: string;
   icon?: Object;
+  disabled?: boolean;
+  hidden?: boolean;
   childern?: Array<ItemInterace>;
 };
 
@@ -38,28 +40,34 @@ export default function DataMenu(props: PropsInterface) {
         onSelect={handleSelect}
       >
         { dataSource.map((item, itemIndex) => {
-          return (
-            <SubMenu 
-              key={(item.key)?item.key:itemIndex} 
-              title={item.title}
-              icon={item.icon}
-            >
-              { item.childern?.map((subItem, subItemIndex) => {
-                return (
-                  <React.Fragment>
-                    <Menu.Item 
-                      key={
-                        (subItem.key)?subItem.key:(itemIndex + '.' + subItemIndex)
-                      }
-                      icon={subItem.icon}
-                    >
-                      {subItem.title}
-                    </Menu.Item>
-                  </React.Fragment>
-                );
-              })}
-            </SubMenu>
-          );
+          if (!item.hidden) {
+            return (
+              <SubMenu 
+                key={(item.key)?item.key:itemIndex} 
+                title={item.title}
+                icon={item.icon}
+                disabled={item.disabled}
+              >
+                { item.childern?.map((subItem, subItemIndex) => {
+                  if (!subItem.hidden) {
+                    return (
+                      <React.Fragment>
+                        <Menu.Item 
+                          key={
+                            (subItem.key)?subItem.key:(itemIndex + '.' + subItemIndex)
+                          }
+                          icon={subItem.icon}
+                          disabled={subItem.disabled}
+                        >
+                          {subItem.title}
+                        </Menu.Item>
+                      </React.Fragment>
+                    );
+                  }
+                })}
+              </SubMenu>
+            );
+          }
         })}
       </Menu>
     </React.Fragment>

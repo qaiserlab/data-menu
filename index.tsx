@@ -12,12 +12,12 @@ function App() {
       title: 'Dashboard',
       icon: <DashboardOutlined />,
       childern: [
-        { title: 'Save' },
-        { title: 'Save As', key: '/save-as' },
+        { title: 'Save', hidden: true },
+        { title: 'Save As', key: '/save-as', disabled: true },
         { title: 'Exit', icon: <PoweroffOutlined /> },
       ]
     },
-    { title: 'Settings' },
+    { title: 'Settings', hidden: true },
     { 
       title: 'Account', 
       childern: [
