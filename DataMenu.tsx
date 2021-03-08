@@ -17,7 +17,7 @@ interface PropsInterface {
   onSelect?: (event: any) => void;
 };
 
-export default function MenuWrapper(props: PropsInterface) {
+export default function DataMenu(props: PropsInterface) {
   const dataSource = Array.isArray(props.dataSource)?props.dataSource:[];
   // horizontal, vertical, inline
   const mode = (props.mode)?props.mode:'horizontal';

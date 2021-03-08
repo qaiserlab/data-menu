@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import "antd/dist/antd.css";
 import { DashboardOutlined, PoweroffOutlined } from "@ant-design/icons";
 
-import MenuWrapper from './MenuWrapper';
+import DataMenu from './DataMenu';
 
 function App() {
   const menus = [
@@ -28,12 +28,12 @@ function App() {
   ];
 
   const handleSelect = ({ key }) => {
-    alert('KEY: ' + key);
+    alert('key: ' + key);
   };
 
   return (
     <React.Fragment>
-      <MenuWrapper 
+      <DataMenu 
         dataSource={menus} 
         mode={'inline'} 
         onSelect={handleSelect} 
