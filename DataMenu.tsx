@@ -19,7 +19,7 @@ interface PropsInterface {
   onSelect?: (event: any) => void;
 };
 
-export default class Welcome extends React.Component<PropsInterface, {}> {
+export default class DataMenu extends React.Component<PropsInterface, {}> {
   public static defaultProps: Partial<PropsInterface> = {
     dataSource: [],
     // horizontal, vertical, inline
