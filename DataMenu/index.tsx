@@ -1,23 +1,8 @@
 import React from 'react';
 import { Menu } from 'antd';
+import { PropsInterface } from './schema'
 
 const { SubMenu } = Menu;
-
-interface ItemInterace {
-  key?: string;
-  title: string;
-  icon?: Object;
-  disabled?: boolean;
-  hidden?: boolean;
-  childern?: Array<ItemInterace>;
-};
-
-interface PropsInterface {
-  dataSource: Array<ItemInterace>;
-  mode?: string;
-  theme?: string;
-  onSelect?: (event: any) => void;
-};
 
 export default class DataMenu extends React.Component<PropsInterface, {}> {
   public static defaultProps: Partial<PropsInterface> = {
