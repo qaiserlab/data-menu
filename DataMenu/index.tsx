@@ -43,7 +43,7 @@ export default class DataMenu extends React.Component<PropsInterface, {}> {
                   icon={item.icon}
                   disabled={item.disabled}
                 >
-                  { item.childern?.map((subItem, subItemIndex) => {
+                  { item.children?.map((subItem, subItemIndex) => {
                     if (!subItem.hidden) {
                       return (
                         <React.Fragment>

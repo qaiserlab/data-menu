@@ -11,7 +11,7 @@ function App() {
     { 
       title: 'Dashboard',
       icon: <DashboardOutlined />,
-      childern: [
+      children: [
         { title: 'Save', hidden: true },
         { title: 'Save As', key: '/save-as', disabled: true },
         { title: 'Exit', icon: <PoweroffOutlined /> },
@@ -20,7 +20,7 @@ function App() {
     { title: 'Settings', hidden: true },
     { 
       title: 'Account', 
-      childern: [
+      children: [
         { title: 'Profile', key: '/profile' },
         { title: 'Logout' },
       ]
