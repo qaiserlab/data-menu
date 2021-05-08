@@ -2,27 +2,31 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import "antd/dist/antd.css";
-import { DashboardOutlined, PoweroffOutlined } from "@ant-design/icons";
+import { DashboardOutlined, TeamOutlined, UserOutlined } from "@ant-design/icons";
 
 import DataMenu from './DataMenu';
 
 function App() {
   const menus = [
     { 
+      key: '/',
       title: 'Dashboard',
       icon: <DashboardOutlined />,
+    },
+    { 
+      title: 'User',
+      icon: <TeamOutlined />,
       children: [
-        { title: 'Save', hidden: true },
-        { title: 'Save As', key: '/save-as', disabled: true },
-        { title: 'Exit', icon: <PoweroffOutlined /> },
+        { title: 'User Management', key: '/user', disabled: true },
+        { title: 'User Privileges', key: '/user/privileges', hidden: true },
       ]
     },
-    { title: 'Settings', hidden: true },
     { 
       title: 'Account', 
+      icon: <UserOutlined />,
       children: [
-        { title: 'Profile', key: '/profile' },
-        { title: 'Logout' },
+        { title: 'Profile', key: '/account' },
+        { title: 'Logout', key: '/account/logout' },
       ]
     },
   ];
