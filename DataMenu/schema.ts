@@ -4,7 +4,7 @@ export interface ItemInterface {
   icon?: Object;
   disabled?: boolean;
   hidden?: boolean;
-  childern?: Array<ItemInterface>;
+  children?: Array<ItemInterface>;
 };
 
 export interface PropsInterface {
