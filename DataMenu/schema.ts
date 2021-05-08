@@ -9,7 +9,7 @@ export interface ItemInterface {
 
 export interface PropsInterface {
   dataSource: Array<ItemInterface>;
-  mode?: string;
-  theme?: string;
+  mode?: any;
+  theme?: any;
   onSelect?: (event: any) => void;
 };
