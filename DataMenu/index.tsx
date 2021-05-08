@@ -28,44 +28,40 @@ export default class DataMenu extends React.Component<PropsInterface, {}> {
 
   render() {
     return (
-      <React.Fragment>
-        <Menu 
-          mode={this.props.mode} 
-          theme={this.props.theme} 
-          onSelect={this.handleSelect}
-        >
-          { this.props.dataSource.map((item, itemIndex) => {
-            if (!item.hidden) {
-              return (
-                <SubMenu 
-                  key={(item.key)?item.key:itemIndex} 
-                  title={item.title}
-                  icon={item.icon}
-                  disabled={item.disabled}
-                >
-                  { item.children?.map((subItem, subItemIndex) => {
-                    if (!subItem.hidden) {
-                      return (
-                        <React.Fragment>
-                          <Menu.Item 
-                            key={
-                              (subItem.key)?subItem.key:(itemIndex + '.' + subItemIndex)
-                            }
-                            icon={subItem.icon}
-                            disabled={subItem.disabled}
-                          >
-                            {subItem.title}
-                          </Menu.Item>
-                        </React.Fragment>
-                      );
-                    }
-                  })}
-                </SubMenu>
-              );
-            }
-          })}
-        </Menu>
-      </React.Fragment>
+      <Menu 
+        mode={this.props.mode} 
+        theme={this.props.theme} 
+        onSelect={this.handleSelect}
+      >
+        { this.props.dataSource.map((item, itemIndex) => {
+          if (!item.hidden) {
+            return (
+              <SubMenu 
+                key={(item.key)?item.key:itemIndex} 
+                title={item.title}
+                icon={item.icon}
+                disabled={item.disabled}
+              >
+                { item.children?.map((subItem, subItemIndex) => {
+                  if (!subItem.hidden) {
+                    return (
+                      <Menu.Item 
+                        key={
+                          (subItem.key)?subItem.key:(itemIndex + '.' + subItemIndex)
+                        }
+                        icon={subItem.icon}
+                        disabled={subItem.disabled}
+                      >
+                        {subItem.title}
+                      </Menu.Item>
+                    );
+                  }
+                })}
+              </SubMenu>
+            );
+          }
+        })}
+      </Menu>
     );
   }
 }
