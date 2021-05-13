@@ -24,8 +24,9 @@ function App() {
     { 
       title: 'Account', 
       icon: <UserOutlined />,
+      key: '/account',
       children: [
-        { title: 'Profile', key: '/account' },
+        { title: 'Profile', key: '/account/profile' },
         { title: 'Logout', key: '/account/logout' },
       ]
     },
@@ -41,6 +42,8 @@ function App() {
         dataSource={menus} 
         mode={'inline'} 
         onSelect={handleSelect} 
+        defaultOpenKeys={['/account']}
+        defaultSelectedKeys={['/account/profile']}
       />
     </React.Fragment>
   );
